@@ -5,9 +5,8 @@ import numpy as np
 import pwlf 
  
 # Load dataset 
-ds = xr.open_dataset('temp_soilmoist.nc') 
- 
-time = 'june' 
+ds = xr.open_dataset('Data/instant_all.nc')
+time = 'June'
 location = 'Rajshahi' 
  
 # Convert temperature to Celsius if needed
@@ -24,8 +23,7 @@ target_lon = 88.6
  
 # Calculate spatial averages 
 temp = ds_may.t2m.sel(latitude=target_lat, longitude=target_lon, method='nearest') 
-sm1 = ds_may.swvl1.sel(latitude=target_lat, longitude=target_lon, method='nearest') 
-sm2 = ds_may.swvl2.sel(latitude=target_lat, longitude=target_lon, method='nearest') 
+sm1 = ds_may.swvl1.sel(latitude=target_lat, longitude=target_lon, method='nearest')
  
 # Calculate 95th percentile of temperature for extreme events 
 temp_95th = np.percentile(temp, 95) 
