@@ -1,5 +1,3 @@
-# bd-weather-analysis
----
 # Climate Forecasting: Temperature Prediction and Land-Atmosphere Coupling in Bangladesh
 
 ## Overview
